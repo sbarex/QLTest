@@ -4,10 +4,10 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>QLExt</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleIconFile</key>
-	<string></string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -22,31 +22,21 @@
 	<string>1</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
-	<key>NSMainStoryboardFile</key>
-	<string>Main</string>
-	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
-	<key>UTExportedTypeDeclarations</key>
-	<array>
+	<key>NSExtension</key>
+	<dict>
+		<key>NSExtensionAttributes</key>
 		<dict>
-			<key>UTTypeConformsTo</key>
+			<key>QLSupportedContentTypes</key>
 			<array>
-				<string>public.data</string>
+				<string>org.sbarex.test</string>
 			</array>
-			<key>UTTypeDescription</key>
-			<string>My document</string>
-			<key>UTTypeIcons</key>
-			<dict/>
-			<key>UTTypeIdentifier</key>
-			<string>org.sbarex.test</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>public.filename-extension</key>
-				<array>
-					<string>sbarex_test</string>
-				</array>
-			</dict>
+			<key>QLSupportsSearchableItems</key>
+			<false/>
 		</dict>
-	</array>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.quicklook.preview</string>
+		<key>NSExtensionPrincipalClass</key>
+		<string>$(PRODUCT_MODULE_NAME).PreviewViewController</string>
+	</dict>
 </dict>
 </plist>

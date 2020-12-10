@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  QLTest
 //
-//  Created by Simone Baldissini on 10/12/20.
+//  Created by Sbarex on 10/12/20.
 //
 
 import Cocoa

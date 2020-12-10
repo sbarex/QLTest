@@ -11,7 +11,35 @@
 		83C2A2C42582AFB800A1EF1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C2A2C32582AFB800A1EF1A /* ViewController.swift */; };
 		83C2A2C62582AFBA00A1EF1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83C2A2C52582AFBA00A1EF1A /* Assets.xcassets */; };
 		83C2A2C92582AFBA00A1EF1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C2A2C72582AFBA00A1EF1A /* Main.storyboard */; };
+		83C2A2D92582AFE000A1EF1A /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C2A2D82582AFE000A1EF1A /* Quartz.framework */; };
+		83C2A2DC2582AFE000A1EF1A /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C2A2DB2582AFE000A1EF1A /* PreviewViewController.swift */; };
+		83C2A2DF2582AFE000A1EF1A /* PreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83C2A2DD2582AFE000A1EF1A /* PreviewViewController.xib */; };
+		83C2A2E42582AFE000A1EF1A /* QLExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 83C2A2D62582AFE000A1EF1A /* QLExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		83C2A2E22582AFE000A1EF1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83C2A2B62582AFB800A1EF1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83C2A2D52582AFE000A1EF1A;
+			remoteInfo = QLExt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		83C2A2E82582AFE000A1EF1A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				83C2A2E42582AFE000A1EF1A /* QLExt.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		83C2A2BE2582AFB800A1EF1A /* QLTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QLTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -21,6 +49,14 @@
 		83C2A2C82582AFBA00A1EF1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83C2A2CA2582AFBA00A1EF1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83C2A2CB2582AFBA00A1EF1A /* QLTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QLTest.entitlements; sourceTree = "<group>"; };
+		83C2A2D62582AFE000A1EF1A /* QLExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QLExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		83C2A2D82582AFE000A1EF1A /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		83C2A2DB2582AFE000A1EF1A /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		83C2A2DE2582AFE000A1EF1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PreviewViewController.xib; sourceTree = "<group>"; };
+		83C2A2E02582AFE000A1EF1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83C2A2E12582AFE000A1EF1A /* QLExt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QLExt.entitlements; sourceTree = "<group>"; };
+		83C2A2F22582B15800A1EF1A /* test.sbarex_test */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.sbarex_test; sourceTree = "<group>"; };
+		83C2A2F72582B37800A1EF1A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +67,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		83C2A2D32582AFE000A1EF1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83C2A2D92582AFE000A1EF1A /* Quartz.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -38,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				83C2A2C02582AFB800A1EF1A /* QLTest */,
+				83C2A2DA2582AFE000A1EF1A /* QLExt */,
+				83C2A2D72582AFE000A1EF1A /* Frameworks */,
 				83C2A2BF2582AFB800A1EF1A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				83C2A2BE2582AFB800A1EF1A /* QLTest.app */,
+				83C2A2D62582AFE000A1EF1A /* QLExt.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				83C2A2C12582AFB800A1EF1A /* AppDelegate.swift */,
+				83C2A2F72582B37800A1EF1A /* README.md */,
+				83C2A2F22582B15800A1EF1A /* test.sbarex_test */,
 				83C2A2C32582AFB800A1EF1A /* ViewController.swift */,
 				83C2A2C52582AFBA00A1EF1A /* Assets.xcassets */,
 				83C2A2C72582AFBA00A1EF1A /* Main.storyboard */,
@@ -61,6 +110,25 @@
 				83C2A2CB2582AFBA00A1EF1A /* QLTest.entitlements */,
 			);
 			path = QLTest;
+			sourceTree = "<group>";
+		};
+		83C2A2D72582AFE000A1EF1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83C2A2D82582AFE000A1EF1A /* Quartz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		83C2A2DA2582AFE000A1EF1A /* QLExt */ = {
+			isa = PBXGroup;
+			children = (
+				83C2A2DB2582AFE000A1EF1A /* PreviewViewController.swift */,
+				83C2A2DD2582AFE000A1EF1A /* PreviewViewController.xib */,
+				83C2A2E02582AFE000A1EF1A /* Info.plist */,
+				83C2A2E12582AFE000A1EF1A /* QLExt.entitlements */,
+			);
+			path = QLExt;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -73,15 +141,34 @@
 				83C2A2BA2582AFB800A1EF1A /* Sources */,
 				83C2A2BB2582AFB800A1EF1A /* Frameworks */,
 				83C2A2BC2582AFB800A1EF1A /* Resources */,
+				83C2A2E82582AFE000A1EF1A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				83C2A2E32582AFE000A1EF1A /* PBXTargetDependency */,
 			);
 			name = QLTest;
 			productName = QLTest;
 			productReference = 83C2A2BE2582AFB800A1EF1A /* QLTest.app */;
 			productType = "com.apple.product-type.application";
+		};
+		83C2A2D52582AFE000A1EF1A /* QLExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83C2A2E52582AFE000A1EF1A /* Build configuration list for PBXNativeTarget "QLExt" */;
+			buildPhases = (
+				83C2A2D22582AFE000A1EF1A /* Sources */,
+				83C2A2D32582AFE000A1EF1A /* Frameworks */,
+				83C2A2D42582AFE000A1EF1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QLExt;
+			productName = QLExt;
+			productReference = 83C2A2D62582AFE000A1EF1A /* QLExt.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -93,6 +180,9 @@
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					83C2A2BD2582AFB800A1EF1A = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					83C2A2D52582AFE000A1EF1A = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -111,6 +201,7 @@
 			projectRoot = "";
 			targets = (
 				83C2A2BD2582AFB800A1EF1A /* QLTest */,
+				83C2A2D52582AFE000A1EF1A /* QLExt */,
 			);
 		};
 /* End PBXProject section */
@@ -122,6 +213,14 @@
 			files = (
 				83C2A2C62582AFBA00A1EF1A /* Assets.xcassets in Resources */,
 				83C2A2C92582AFBA00A1EF1A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83C2A2D42582AFE000A1EF1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83C2A2DF2582AFE000A1EF1A /* PreviewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +236,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		83C2A2D22582AFE000A1EF1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83C2A2DC2582AFE000A1EF1A /* PreviewViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		83C2A2E32582AFE000A1EF1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83C2A2D52582AFE000A1EF1A /* QLExt */;
+			targetProxy = 83C2A2E22582AFE000A1EF1A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		83C2A2C72582AFBA00A1EF1A /* Main.storyboard */ = {
@@ -146,6 +261,14 @@
 				83C2A2C82582AFBA00A1EF1A /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		83C2A2DD2582AFE000A1EF1A /* PreviewViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83C2A2DE2582AFE000A1EF1A /* Base */,
+			);
+			name = PreviewViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -269,6 +392,7 @@
 		83C2A2CF2582AFBA00A1EF1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = QLTest/QLTest.entitlements;
@@ -279,6 +403,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = org.sbarex.QLTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -288,6 +413,7 @@
 		83C2A2D02582AFBA00A1EF1A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = QLTest/QLTest.entitlements;
@@ -298,8 +424,47 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = org.sbarex.QLTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		83C2A2E62582AFE000A1EF1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = QLExt/QLExt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = QLExt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = org.sbarex.QLTest.QLExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		83C2A2E72582AFE000A1EF1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = QLExt/QLExt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = QLExt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = org.sbarex.QLTest.QLExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -321,6 +486,15 @@
 			buildConfigurations = (
 				83C2A2CF2582AFBA00A1EF1A /* Debug */,
 				83C2A2D02582AFBA00A1EF1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83C2A2E52582AFE000A1EF1A /* Build configuration list for PBXNativeTarget "QLExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83C2A2E62582AFE000A1EF1A /* Debug */,
+				83C2A2E72582AFE000A1EF1A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
