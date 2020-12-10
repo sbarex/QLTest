@@ -44,7 +44,7 @@ class PreviewViewController: NSViewController, QLPreviewingController, WKNavigat
         // On BigSur 11.0.1 the entitlements on the extesion are ignored and webkit fail to render. Old WebView works.
         
         self.handler = handler
-        let html = "<html><body>hello world</body></html>"
+        let html = "<html><body><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world!</p></body></html>"
         
         /*
         // MARK: INFO
