@@ -8,6 +8,17 @@
 import Cocoa
 import Quartz
 import WebKit
+
+class MyWebView: WKWebView {
+    override var canBecomeKeyView: Bool {
+        return false
+    }
+    
+    override func becomeFirstResponder() -> Bool {
+        return false
+    }
+}
+
 class PreviewViewController: NSViewController, QLPreviewingController, WKNavigationDelegate, WKUIDelegate {
     var handler: ((Error?) -> Void)?
     
@@ -44,7 +55,62 @@ class PreviewViewController: NSViewController, QLPreviewingController, WKNavigat
         // On BigSur 11.0.1 the entitlements on the extesion are ignored and webkit fail to render. Old WebView works.
         
         self.handler = handler
-        let html = "<html><body><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world</p><p>hello world!</p></body></html>"
+        let html = """
+<html>
+<body>
+        <p>1. hello world</p>
+        <p>2. hello world</p>
+        <p>3. hello world</p>
+        <p><a href="https://www.google.com/?q=quicklook+bug">This link must open google site on the standard browser.</a></p>
+        <p>4. hello world</p>
+        <p>5. hello world</p>
+        <p>6. hello world</p>
+        <p>7. hello world</p>
+        <p>8. hello world</p>
+        <p>9. hello world</p>
+        <p>10. hello world</p>
+        <p>11. hello world</p>
+        <p>12. hello world</p>
+        <p>13. hello world</p>
+        <p>14. hello world</p>
+        <p>15. hello world</p>
+        <p>16. hello world</p>
+        <p>17. hello world</p>
+        <p>18. hello world</p>
+        <p>19. hello world</p>
+        <p>20. hello world</p>
+        <p>21. hello world</p>
+        <p>22. hello world</p>
+        <p>23. hello world</p>
+        <p>24. hello world</p>
+        <p>25. hello world</p>
+        <p>26. hello world</p>
+        <p>27. hello world</p>
+        <p>28. hello world</p>
+        <p>29. hello world</p>
+        <p>30. hello world</p>
+        <p>31. hello world</p>
+        <p>32. hello world</p>
+        <p>33. hello world</p>
+        <p>34. hello world</p>
+        <p>35. hello world</p>
+        <p>36. hello world</p>
+        <p>37. hello world</p>
+        <p>38. hello world</p>
+        <p>39. hello world</p>
+        <p>40. hello world</p>
+        <p>41. hello world</p>
+        <p>42. hello world</p>
+        <p>43. hello world</p>
+        <p>44. hello world</p>
+        <p>45. hello world</p>
+        <p>46. hello world</p>
+        <p>47. hello world</p>
+        <p>48. hello world</p>
+        <p>49. hello world</p>
+</body>
+</html>
+"""
         
         /*
         // MARK: INFO
@@ -63,7 +129,8 @@ class PreviewViewController: NSViewController, QLPreviewingController, WKNavigat
         
         
         // MARK: FIXME
-        // this code fail on Big Sur.
+        // this code fail on Big Sur without the com.apple.security.temporary-exception.mach-lookup.global-name entitlement for process com.apple.nsurlsessiond.
+        
         let preferences = WKPreferences()
         preferences.javaScriptEnabled = false
 
@@ -73,7 +140,7 @@ class PreviewViewController: NSViewController, QLPreviewingController, WKNavigat
         configuration.allowsAirPlayForMediaPlayback = false
         // configuration.userContentController.add(self, name: "jsHandler")
         
-        let webView = WKWebView(frame: self.view.bounds, configuration: configuration)
+        let webView = MyWebView(frame: self.view.bounds, configuration: configuration)
         webView.autoresizingMask = [.height, .width]
         
         webView.wantsLayer = true
@@ -104,6 +171,21 @@ class PreviewViewController: NSViewController, QLPreviewingController, WKNavigat
             handler(error)
             self.handler = nil
         }
+    }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        if navigationAction.navigationType == .linkActivated, let url = navigationAction.request.url {
+            // FIXME: on big sur fail with this error on Console:
+            // Launch Services generated an error at +[_LSRemoteOpenCall(PrivateCSUIAInterface) invokeWithXPCConnection:object:]:455, converting to OSStatus -54: Error Domain=NSOSStatusErrorDomain Code=-54 "The sandbox profile of this process is missing "(allow lsopen)", so it cannot invoke Launch Services' open API." UserInfo={NSDebugDescription=The sandbox profile of this process is missing "(allow lsopen)", so it cannot invoke Launch Services' open API., _LSLine=455, _LSFunction=+[_LSRemoteOpenCall(PrivateCSUIAInterface) invokeWithXPCConnection:object:]}
+            let r = NSWorkspace.shared.open(url)
+            if r {
+                decisionHandler(.cancel)
+                return
+            } else {
+                print("Unable to open on the exteral browser: ", url.absoluteString)
+            }
+        }
+        decisionHandler(.allow)
     }
 }
 
