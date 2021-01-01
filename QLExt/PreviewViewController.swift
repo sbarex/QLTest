@@ -63,6 +63,7 @@ class PreviewViewController: NSViewController, QLPreviewingController, WKNavigat
         <p>3. hello world</p>
         <p><a href="https://www.google.com/?q=quicklook+bug">This link must open google site on the standard browser.</a></p>
         <p>4. hello world</p>
+        <p><a href="#p45">this link scroll to paragraph 45</a></p>
         <p>5. hello world</p>
         <p>6. hello world</p>
         <p>7. hello world</p>
@@ -103,7 +104,7 @@ class PreviewViewController: NSViewController, QLPreviewingController, WKNavigat
         <p>42. hello world</p>
         <p>43. hello world</p>
         <p>44. hello world</p>
-        <p>45. hello world</p>
+        <p id="p45">45. hello world</p>
         <p>46. hello world</p>
         <p>47. hello world</p>
         <p>48. hello world</p>
