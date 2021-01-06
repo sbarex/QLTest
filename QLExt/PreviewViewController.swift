@@ -55,63 +55,8 @@ class PreviewViewController: NSViewController, QLPreviewingController, WKNavigat
         // On BigSur 11.0.1 the entitlements on the extesion are ignored and webkit fail to render. Old WebView works.
         
         self.handler = handler
-        let html = """
-<html>
-<body>
-        <p>1. hello world</p>
-        <p>2. hello world</p>
-        <p>3. hello world</p>
-        <p><a href="https://www.google.com/?q=quicklook+bug">This link must open google site on the standard browser.</a></p>
-        <p>4. hello world</p>
-        <p><a href="#p45">this link scroll to paragraph 45</a></p>
-        <p>5. hello world</p>
-        <p>6. hello world</p>
-        <p>7. hello world</p>
-        <p>8. hello world</p>
-        <p>9. hello world</p>
-        <p>10. hello world</p>
-        <p>11. hello world</p>
-        <p>12. hello world</p>
-        <p>13. hello world</p>
-        <p>14. hello world</p>
-        <p>15. hello world</p>
-        <p>16. hello world</p>
-        <p>17. hello world</p>
-        <p>18. hello world</p>
-        <p>19. hello world</p>
-        <p>20. hello world</p>
-        <p>21. hello world</p>
-        <p>22. hello world</p>
-        <p>23. hello world</p>
-        <p>24. hello world</p>
-        <p>25. hello world</p>
-        <p>26. hello world</p>
-        <p>27. hello world</p>
-        <p>28. hello world</p>
-        <p>29. hello world</p>
-        <p>30. hello world</p>
-        <p>31. hello world</p>
-        <p>32. hello world</p>
-        <p>33. hello world</p>
-        <p>34. hello world</p>
-        <p>35. hello world</p>
-        <p>36. hello world</p>
-        <p>37. hello world</p>
-        <p>38. hello world</p>
-        <p>39. hello world</p>
-        <p>40. hello world</p>
-        <p>41. hello world</p>
-        <p>42. hello world</p>
-        <p>43. hello world</p>
-        <p>44. hello world</p>
-        <p id="p45">45. hello world</p>
-        <p>46. hello world</p>
-        <p>47. hello world</p>
-        <p>48. hello world</p>
-        <p>49. hello world</p>
-</body>
-</html>
-"""
+        
+        let html = (try? String(contentsOf: Bundle.main.url(forResource: "index", withExtension: "html")!))!
         
         /*
         // MARK: INFO
@@ -121,13 +66,12 @@ class PreviewViewController: NSViewController, QLPreviewingController, WKNavigat
         webView.preferences.isJavaScriptEnabled = false
         webView.preferences.allowsAirPlayForMediaPlayback = false
         webView.preferences.arePlugInsEnabled = false
+        webView.frameLoadDelegate = self
         
         self.view.addSubview(webView)
         webView.mainFrame.loadHTMLString(html, baseURL: nil)
-        webView.frameLoadDelegate = self
         
         */
-        
         
         // MARK: FIXME
         // this code fail on Big Sur without the com.apple.security.temporary-exception.mach-lookup.global-name entitlement for process com.apple.nsurlsessiond.

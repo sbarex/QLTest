@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8335040425A601C600511A5A /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 8335040325A601C600511A5A /* index.html */; };
+		8335040725A6158E00511A5A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 83C2A2F72582B37800A1EF1A /* README.md */; };
+		8335040A25A61FA200511A5A /* test.sbarex_test in Resources */ = {isa = PBXBuildFile; fileRef = 83C2A2F22582B15800A1EF1A /* test.sbarex_test */; };
+		8335041C25A6208A00511A5A /* openql.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 8335041125A6208A00511A5A /* openql.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8335042725A622A100511A5A /* external_launcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335042625A622A100511A5A /* external_launcherProtocol.swift */; };
+		8335042825A622A100511A5A /* external_launcher_delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335042525A622A100511A5A /* external_launcher_delegate.swift */; };
+		8335042925A622A100511A5A /* external_launcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335042425A622A100511A5A /* external_launcher.swift */; };
+		8335042E25A622A500511A5A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335042D25A622A500511A5A /* main.swift */; };
 		83C2A2C22582AFB800A1EF1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C2A2C12582AFB800A1EF1A /* AppDelegate.swift */; };
 		83C2A2C42582AFB800A1EF1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C2A2C32582AFB800A1EF1A /* ViewController.swift */; };
 		83C2A2C62582AFBA00A1EF1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83C2A2C52582AFBA00A1EF1A /* Assets.xcassets */; };
@@ -18,6 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8335041A25A6208A00511A5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83C2A2B62582AFB800A1EF1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8335041025A6208A00511A5A;
+			remoteInfo = openql;
+		};
 		83C2A2E22582AFE000A1EF1A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83C2A2B62582AFB800A1EF1A /* Project object */;
@@ -28,6 +43,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		8335042025A6208A00511A5A /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				8335041C25A6208A00511A5A /* openql.xpc in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		83C2A2E82582AFE000A1EF1A /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -42,6 +68,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8335040325A601C600511A5A /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		8335041125A6208A00511A5A /* openql.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = openql.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		8335041925A6208A00511A5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8335042425A622A100511A5A /* external_launcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = external_launcher.swift; sourceTree = "<group>"; };
+		8335042525A622A100511A5A /* external_launcher_delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = external_launcher_delegate.swift; sourceTree = "<group>"; };
+		8335042625A622A100511A5A /* external_launcherProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = external_launcherProtocol.swift; sourceTree = "<group>"; };
+		8335042D25A622A500511A5A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		83C2A2BE2582AFB800A1EF1A /* QLTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QLTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83C2A2C12582AFB800A1EF1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83C2A2C32582AFB800A1EF1A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +93,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8335040E25A6208A00511A5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		83C2A2BB2582AFB800A1EF1A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,6 +118,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8335041225A6208A00511A5A /* openql */ = {
+			isa = PBXGroup;
+			children = (
+				8335042D25A622A500511A5A /* main.swift */,
+				8335042525A622A100511A5A /* external_launcher_delegate.swift */,
+				8335042425A622A100511A5A /* external_launcher.swift */,
+				8335042625A622A100511A5A /* external_launcherProtocol.swift */,
+				8335041925A6208A00511A5A /* Info.plist */,
+			);
+			path = openql;
+			sourceTree = "<group>";
+		};
 		83C2A2B52582AFB800A1EF1A = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +137,7 @@
 				83C2A2F22582B15800A1EF1A /* test.sbarex_test */,
 				83C2A2C02582AFB800A1EF1A /* QLTest */,
 				83C2A2DA2582AFE000A1EF1A /* QLExt */,
+				8335041225A6208A00511A5A /* openql */,
 				83C2A2D72582AFE000A1EF1A /* Frameworks */,
 				83C2A2BF2582AFB800A1EF1A /* Products */,
 			);
@@ -95,6 +148,7 @@
 			children = (
 				83C2A2BE2582AFB800A1EF1A /* QLTest.app */,
 				83C2A2D62582AFE000A1EF1A /* QLExt.appex */,
+				8335041125A6208A00511A5A /* openql.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +181,7 @@
 				83C2A2DD2582AFE000A1EF1A /* PreviewViewController.xib */,
 				83C2A2E02582AFE000A1EF1A /* Info.plist */,
 				83C2A2E12582AFE000A1EF1A /* QLExt.entitlements */,
+				8335040325A601C600511A5A /* index.html */,
 			);
 			path = QLExt;
 			sourceTree = "<group>";
@@ -134,6 +189,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8335041025A6208A00511A5A /* openql */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8335041D25A6208A00511A5A /* Build configuration list for PBXNativeTarget "openql" */;
+			buildPhases = (
+				8335040D25A6208A00511A5A /* Sources */,
+				8335040E25A6208A00511A5A /* Frameworks */,
+				8335040F25A6208A00511A5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = openql;
+			productName = openql;
+			productReference = 8335041125A6208A00511A5A /* openql.xpc */;
+			productType = "com.apple.product-type.xpc-service";
+		};
 		83C2A2BD2582AFB800A1EF1A /* QLTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83C2A2CE2582AFBA00A1EF1A /* Build configuration list for PBXNativeTarget "QLTest" */;
@@ -142,11 +214,13 @@
 				83C2A2BB2582AFB800A1EF1A /* Frameworks */,
 				83C2A2BC2582AFB800A1EF1A /* Resources */,
 				83C2A2E82582AFE000A1EF1A /* Embed App Extensions */,
+				8335042025A6208A00511A5A /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				83C2A2E32582AFE000A1EF1A /* PBXTargetDependency */,
+				8335041B25A6208A00511A5A /* PBXTargetDependency */,
 			);
 			name = QLTest;
 			productName = QLTest;
@@ -179,6 +253,9 @@
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
+					8335041025A6208A00511A5A = {
+						CreatedOnToolsVersion = 12.3;
+					};
 					83C2A2BD2582AFB800A1EF1A = {
 						CreatedOnToolsVersion = 12.2;
 					};
@@ -202,16 +279,26 @@
 			targets = (
 				83C2A2BD2582AFB800A1EF1A /* QLTest */,
 				83C2A2D52582AFE000A1EF1A /* QLExt */,
+				8335041025A6208A00511A5A /* openql */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8335040F25A6208A00511A5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		83C2A2BC2582AFB800A1EF1A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8335040725A6158E00511A5A /* README.md in Resources */,
 				83C2A2C62582AFBA00A1EF1A /* Assets.xcassets in Resources */,
+				8335040A25A61FA200511A5A /* test.sbarex_test in Resources */,
 				83C2A2C92582AFBA00A1EF1A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,12 +308,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				83C2A2DF2582AFE000A1EF1A /* PreviewViewController.xib in Resources */,
+				8335040425A601C600511A5A /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8335040D25A6208A00511A5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8335042925A622A100511A5A /* external_launcher.swift in Sources */,
+				8335042E25A622A500511A5A /* main.swift in Sources */,
+				8335042725A622A100511A5A /* external_launcherProtocol.swift in Sources */,
+				8335042825A622A100511A5A /* external_launcher_delegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		83C2A2BA2582AFB800A1EF1A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -247,6 +346,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8335041B25A6208A00511A5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8335041025A6208A00511A5A /* openql */;
+			targetProxy = 8335041A25A6208A00511A5A /* PBXContainerItemProxy */;
+		};
 		83C2A2E32582AFE000A1EF1A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 83C2A2D52582AFE000A1EF1A /* QLExt */;
@@ -274,6 +378,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8335041E25A6208A00511A5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = openql/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = org.sbarex.qltest.openql;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8335041F25A6208A00511A5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = openql/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = org.sbarex.qltest.openql;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		83C2A2CC2582AFBA00A1EF1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -480,6 +616,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8335041D25A6208A00511A5A /* Build configuration list for PBXNativeTarget "openql" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8335041E25A6208A00511A5A /* Debug */,
+				8335041F25A6208A00511A5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		83C2A2B92582AFB800A1EF1A /* Build configuration list for PBXProject "QLTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

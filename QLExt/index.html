@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+<title>QL Bugs</title>
+<style type="text/css">
+    :root {
+      --backgroundColor: #eeeeee;
+      --textColor: #333333;
+      --linkColor: #0000ff;
+    }
+.myclass {
+    color: blue;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --backgroundColor: #333333;
+        --textColor: #eeeeee;
+        --linkColor: #3366ff;
+    }
+    
+    .myclass {
+        color: yellow;
+    }
+}
+
+html {
+    font-family: -apple-system;
+}
+
+body {
+  color: var(--textColor);
+  background-color: var(--backgroundColor);
+}
+li {
+    padding-bottom: 1.5em;
+}
+a[href] {
+    color: var(--linkColor);
+}
+</style>
+</head>
+<body>
+    <h1>Bugs test for Quick Look appex on Big Sur (11.1). </h1>
+    <ol>
+        <li>WKWebView process fail immediately when the preview is opened (the <code>com.apple.security.network.client</code> entitlement is always ignored). See <a href="https://bugs.webkit.org/show_bug.cgi?id=219632">webkit bug 219632</a>. The temporary workaround is to set <code>com.apple.nsurlsessiond</code> in the <code>com.apple.security.temporary-exception.mach-lookup.global-name</code> entitlement<sup><a href="#note1">1</a></sup>.</li>
+
+        <li>Scrollbar is not usable. When you click & draw on the scroller you drag the window without scroll.</li>
+
+        <li>WKWebView cannot be scrolled with trackpad gesture in a fullscreen QL preview <sup><a href="#note1">1</a></sup>. See <a href="https://bugs.webkit.org/show_bug.cgi?id=220197">webkit bug 220197</a>.</li>
+
+        <li>External links inside a WKWebView are open on the Quick Look preview and if you try to open on an external browser with <code>NSWorkspace.shared.open</code> always fail. On the Console this is the log:
+        <code>
+        Launch Services generated an error at +[_LSRemoteOpenCall(PrivateCSUIAInterface) invokeWithXPCConnection:object:]:455, converting to OSStatus -54: Error Domain=NSOSStatusErrorDomain Code=-54 "The sandbox profile of this process is missing "(allow lsopen)", so it cannot invoke Launch Services' open API." UserInfo={NSDebugDescription=The sandbox profile of this process is missing "(allow lsopen)", so it cannot invoke Launch Services' open API., _LSLine=455, _LSFunction=+[_LSRemoteOpenCall(PrivateCSUIAInterface) invokeWithXPCConnection:object:]}
+        </code>
+        <p><a href="https://www.google.com/?q=quicklook+bug">This link must open Google site on the standard browser.</a></p>
+        </li>
+
+        <li>Internal link on a WKWebView works with a delay between click and the scroll to anchor link. During the pause the console show a warning about Quick Look preview do not allow first responder view.</li>
+
+        <li>
+            Inside a WKWebView, customize the light/dark appearance with `@media (prefers-color-scheme: dark) { }` and `:root` vars fail switching the preview to fullscreen.<br /> On fullscreen is always used the dark appearance, but only for <code>:root</code> vars and not for custom css classes<sup> <a href="#note2">2</a></sup>.
+            <br /><br />
+            This document use for background and text color a values defined with vars inside a :root block.
+            On light appearance the background is #eeeeee <span style="width: 50px; border: 1px solid grey; background: #eeeeee; display: inline-block;">&nbsp;</span> and foreground #333333 <span style="width: 50px; border: 1px solid grey; background: #333333; display: inline-block;">&nbsp;</span>, on dark appearance the background is #333333 <span style="width: 50px; border: 1px solid grey; background: #333333; display: inline-block;">&nbsp;</span> and foreground #eeeeee <span style="width: 50px; border: 1px solid grey; background: #eeeeee; display: inline-block;">&nbsp;</span>.
+            
+            <br />
+            <div class="myclass">This block use a custom css class without vars. On light appearance this text is blue and on dark is yellow.</div>
+        </li>
+    </ol>
+    <hr />
+    <p id="note1"><sup>1 </sup>These WebKit bugs occurs only with the WKWebView. If I use the old WebView the preview works correctly.</p>
+    <p id="note2"><sup>2 </sup>This bug occurs both with WKWebView and the deprecated  WebView.</p>
+    <hr />
+
+        <p>1. hello world</p>
+        <p>2. hello world</p>
+        <p>3. hello world</p>
+        <p><a href="https://www.google.com/?q=quicklook+bug">This link must open google site on the standard browser.</a></p>
+        <p>4. hello world</p>
+        <p><a href="#p45">this link scroll to paragraph 45</a></p>
+        <p>5. hello world</p>
+        <p>6. hello world</p>
+        <p>7. hello world</p>
+        <p>8. hello world</p>
+        <p>9. hello world</p>
+        <p>10. hello world</p>
+        <p>11. hello world</p>
+        <p>12. hello world</p>
+        <p>13. hello world</p>
+        <p>14. hello world</p>
+        <p>15. hello world</p>
+        <p>16. hello world</p>
+        <p>17. hello world</p>
+        <p>18. hello world</p>
+        <p>19. hello world</p>
+        <p>20. hello world</p>
+        <p>21. hello world</p>
+        <p>22. hello world</p>
+        <p>23. hello world</p>
+        <p>24. hello world</p>
+        <p>25. hello world</p>
+        <p>26. hello world</p>
+        <p>27. hello world</p>
+        <p>28. hello world</p>
+        <p>29. hello world</p>
+        <p>30. hello world</p>
+        <p>31. hello world</p>
+        <p>32. hello world</p>
+        <p>33. hello world</p>
+        <p>34. hello world</p>
+        <p>35. hello world</p>
+        <p>36. hello world</p>
+        <p>37. hello world</p>
+        <p>38. hello world</p>
+        <p>39. hello world</p>
+        <p>40. hello world</p>
+        <p>41. hello world</p>
+        <p>42. hello world</p>
+        <p>43. hello world</p>
+        <p>44. hello world</p>
+        <p id="p45">45. hello world</p>
+        <p>46. hello world</p>
+        <p>47. hello world</p>
+        <p>48. hello world</p>
+        <p>49. hello world</p>
+</body>
+</html>
