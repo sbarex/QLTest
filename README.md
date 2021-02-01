@@ -4,7 +4,7 @@ Bugs test for quicklook appex on Big Sur (11.1). On Catalina these bugs do not e
 
 This app handle preview of files with .sbarex_text extensions. The preview show a fake contents inside a WKWebView.
 
-1. ~~WKWebView process fail immediately when the preview is opened~~ (the `com.apple.security.network.client` entitlement is always ignored). See [webkit bug 219632](https://bugs.webkit.org/show_bug.cgi?id=219632). The temporary workaround is to set `com.apple.nsurlsessiond` in the `com.apple.security.temporary-exception.mach-lookup.global-name` entitlement[^footnote_1]. Fixed on [WebKit Changeset 271895](https://trac.webkit.org/changeset/271895/webkit).
+1. ~~WKWebView process fail immediately when the preview is opened~~ (the `com.apple.security.network.client` entitlement is always ignored). See [webkit bug 219632](https://bugs.webkit.org/show_bug.cgi?id=219632). The temporary workaround is to set `com.apple.nsurlsessiond` in the `com.apple.security.temporary-exception.mach-lookup.global-name` entitlement[^footnote_1]. **Fixed on [WebKit Changeset 271895](https://trac.webkit.org/changeset/271895/webkit).**
 
 2. Scrollbar is not usable. When you click & draw on the scroller you drag the window without scroll.
 
@@ -12,12 +12,12 @@ This app handle preview of files with .sbarex_text extensions. The preview show 
 
 4. External links inside a WKWebView are open on the Quick Look preview and not in the default browser.
 
-5. `NSWorkspace.shared.open` always fail. On the Console this is the log:
+5. ~~`NSWorkspace.shared.open` always fail. On the Console this is the log:~~
 
 `
 Launch Services generated an error at +[_LSRemoteOpenCall(PrivateCSUIAInterface) invokeWithXPCConnection:object:]:455, converting to OSStatus -54: Error Domain=NSOSStatusErrorDomain Code=-54 "The sandbox profile of this process is missing "(allow lsopen)", so it cannot invoke Launch Services' open API." UserInfo={NSDebugDescription=The sandbox profile of this process is missing "(allow lsopen)", so it cannot invoke Launch Services' open API., _LSLine=455, _LSFunction=+[_LSRemoteOpenCall(PrivateCSUIAInterface) invokeWithXPCConnection:object:]}
 `
-In this example application `NSWorkspace.shared.open` is used to open the external link on the default browser.
+In this example application `NSWorkspace.shared.open` is used to open the external link on the default browser. **Apple reports this is the correct behavior.**
 
 5. On a WKWebView internal link works with a delay between click and the scroll to the destination anchor. During the pause the console show a warning about Quick Look Preview do not allow first responder view.
 
