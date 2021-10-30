@@ -1,12 +1,12 @@
 #  Quicklook extension bugs test on Big Sur
 
-Bugs test for quicklook appex on Big Sur (11.1). On Catalina these bugs do not exists.
+Bugs test for quicklook appex on macOS Big Sur (11.1). On Catalina these bugs do not exists.
 
 This app handle preview of files with .sbarex_text extensions. The preview show a fake contents inside a WKWebView.
 
 1. WKWebView process fail immediately when the preview is opened (the `com.apple.security.network.client` entitlement is always ignored). See [webkit bug 219632](https://bugs.webkit.org/show_bug.cgi?id=219632). The temporary workaround is to set `com.apple.nsurlsessiond` in the `com.apple.security.temporary-exception.mach-lookup.global-name` entitlement[^footnote_1].
 
-2. Scrollbar is not usable. When you click & draw on the scroller you drag the window without scroll.
+2. Scrollbar is not usable. When you click & draw on the scroller you drag the window without scroll. **Fixed on macOS 12 Monterey**
 
 3. WKWebView cannot be scrolled with trackpad gesture in a fullscreen QL preview [^footnote1]. See (webkit bug 220197)[https://bugs.webkit.org/show_bug.cgi?id=220197].
 
@@ -29,7 +29,7 @@ In this example application `NSWorkspace.shared.open` is used to open the extern
 }
 
 .myclass {
-    color: blue;
+    color: green;
 }
 @media (prefers-color-scheme: dark) {
     :root {
@@ -53,4 +53,5 @@ This occurs only defining the dark style with `:root` vars. Settings the style w
 
 ---
 [^footnote_1]: These WebKit bugs occurs only with the WKWebView. If I use the old WebView the preview works correctly.
+
 [^footnote_2]: This bug occurs both with WKWebView and the deprecated  WebView.
