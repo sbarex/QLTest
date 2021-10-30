@@ -6,7 +6,7 @@ This app handle preview of files with .sbarex_text extensions. The preview show 
 
 1. ~~WKWebView process fail immediately when the preview is opened~~ (the `com.apple.security.network.client` entitlement is always ignored). See [webkit bug 219632](https://bugs.webkit.org/show_bug.cgi?id=219632). The temporary workaround is to set `com.apple.nsurlsessiond` in the `com.apple.security.temporary-exception.mach-lookup.global-name` entitlement[^footnote_1]. **Fixed on [WebKit Changeset 271895](https://trac.webkit.org/changeset/271895/webkit).**
 
-2. Scrollbar is not usable. When you click & draw on the scroller you drag the window without scroll. **Fixed on macOS 12 Monterey**
+2. ~~Scrollbar is not usable. When you click & draw on the scroller you drag the window without scroll.~~ **Fixed on macOS 12 Monterey**
 
 3. WKWebView cannot be scrolled with trackpad gesture in a fullscreen QL preview [^footnote1]. See (webkit bug 220197)[https://bugs.webkit.org/show_bug.cgi?id=220197].
 
